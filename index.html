@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 5.5.7. Mostrador aleatorio de imágenes.</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" charset="utf-8">
+		var img_urls = ["https://upload.wikimedia.org/wikipedia/commons/5/5d/2015-08_playboating_Durance_09.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Varied_tit_at_Tenn%C5%8Dji_Park_in_Osaka%2C_January_2016.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/9/92/Zenit-B_Helios-44-2_2012_G1.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/5/50/R%C3%BCckzug_aus_dem_Danewerk_5-6._Februar_1864.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/f/f7/13-08-09-peak-by-RalfR-04.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/f/fc/Martin_Sesaker_at_the_2012_Youth_Winter_Olympics.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/3/3b/11-09-fotofluege-cux-allg-25a.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg"
+		];
+
+		function cambiador(id, newValue) {
+			var element = document.getElementById(id);
+			element.innerHTML = newValue;
+		}
+
+		function nueva_imagen(id) {
+			var pos = Math.random() * img_urls.length;
+			pos = Math.floor(pos);
+			cambiador(id, '<img src="' + img_urls[pos] + '">');
+		}
+	</script>
+</head>
+
+<body>
+	<p><a href="javascript:nueva_imagen('imagen')">Genera una imagen</a></p>
+	<div id=imagen>
+	</div>
+	<script type="text/javascript">
+		nueva_imagen('imagen');
+	</script>
+</body>
+
+</html>
